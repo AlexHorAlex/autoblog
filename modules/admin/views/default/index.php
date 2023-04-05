@@ -1,5 +1,6 @@
 <div class="admin-default-index">
-    <h1><?= $this->context->action->uniqueId ?></h1>
+    <h1><?= 'Головна сторінка адміністратора'//$this->context->action->uniqueId ?></h1>
+	<!-- add page content -->
     <p>
         This is the view content for action "<?= $this->context->action->id ?>".
         The action belongs to the controller "<?= get_class($this->context) ?>"
