@@ -11,13 +11,14 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-md-8">
                 <?php foreach($articles as $article):?>
-				<?php //var_dump ($article);die?>
-                    <article class="post">
+				    <article class="post">
                         <div class="post-thumb">
                             <a href="<?= Url::toRoute(['site/view', 'id'=>$article->id]);?>"><img src="<?= $article->getImage();?>" alt=""></a>
 
                             <a href="<?= Url::toRoute(['site/view', 'id'=>$article->id]);?>" class="post-thumb-overlay text-center">
-                                <div class="text-uppercase text-center">View Post</div>
+                                <div class="text-uppercase text-center">
+								Перегляд  <!-- View Post-->
+								</div>
                             </a>
                         </div>
                         <div class="post-content">
@@ -33,13 +34,15 @@ $this->title = 'My Yii Application';
                                 </p>
 
                                 <div class="btn-continue-reading text-center text-uppercase">
-                                    <a href="<?= Url::toRoute(['site/view', 'id'=>$article->id]);?>" class="more-link">Continue Reading</a>
+                                    <a href="<?= Url::toRoute(['site/view', 'id'=>$article->id]);?>" class="more-link">
+									Продовжити читання  <!-- Continue Reading-->
+									</a>
                                 </div>
                             </div>
                             <div class="social-share">
 									<span class="social-share-title pull-left text-capitalize">
-										By <?= 'Alex';//$article->author->name; ?>
-										On <?= $article->getDate();?>
+										від <!--By -->  <?= $article->author->name; //'Alex';?>
+										опубліковане <!--On --> <?= $article->getDate();?>
 									</span>
                                 <ul class="text-center pull-right">
                                     <li><a class="s-facebook" href="#"><i class="fa fa-eye"></i></a></li><?= (int) $article->viewed?>

@@ -22,15 +22,17 @@ use yii\helpers\Url;
                             <?= $article->content?>
                         </div>
                         <div class="decoration">
-                            <a href="#" class="btn btn-default">Decoration</a>
-                            <a href="#" class="btn btn-default">Decoration</a>
+                        <!--    <a href="#" class="btn btn-default">Decoration</a>
+                            <a href="#" class="btn btn-default">Decoration</a>-->
                         </div>
 
                         <div class="social-share">
 							<span
                                 class="social-share-title pull-left text-capitalize">
-								By <?= 'Alex'//$article->author->name?>
-								On <?= $article->getDate();?>
+								від <!--By --> 
+								<?= $article->author->name;//'Alex'//?>
+								опубліковане <!--On -->
+								<?= $article->getDate();?>
 							</span>
                             <ul class="text-center pull-right">
                                 <li><a class="s-facebook" href="#"><i class="fa fa-facebook"></i></a></li>

@@ -34,16 +34,16 @@ class Module extends \yii\base\Module
             'access'    =>  [
                 'class' =>  AccessControl::className(),
                 'denyCallback'  =>  function($rule, $action)
-                {
-                    throw new \yii\web\NotFoundHttpException();
+                {                  
+					throw new \yii\web\NotFoundHttpException();
                 },
                 'rules' =>  [
                     [
                         'allow' =>  true,
                         'matchCallback' =>  function($rule, $action)
                         {							
-		/*if (Yii::$app->user->identity != NULL){return Yii::$app->user->identity->isAdmin;	} else {return 0;} */
-                          return (Yii::$app->user->identity != NULL) ? Yii::$app->user->identity->isAdmin : 0;								
+	                	/*if (Yii::$app->user->identity != NULL){return Yii::$app->user->identity->isAdmin;	} else {return 0;} */
+                         return (Yii::$app->user->isGuest) ? 0 : Yii::$app->user->identity->isAdmin; 						  
                         }
                     ]
                 ]

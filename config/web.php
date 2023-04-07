@@ -49,8 +49,20 @@ $config = [
             'showScriptName' => false,
             'rules' => [
             ],
-        ],       
-    ],
+        ], 
+		
+	/*    'i18n' => [           
+			'translations' => [
+				'app*' => [
+					'class' => 'yii\i18n\PhpMessageSource',
+					'basePath' => '@app/messages',
+					'sourceLanguage' => 'en-UA',					
+				],
+			],
+		],
+		*/   //Тепер ви можете розмістити свої виправлені переклади в @app/messages/<language>/app.php. [@app/messages/en-UA/app.php]
+    ],  
+	
 	'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
