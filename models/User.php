@@ -108,7 +108,9 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 	
     public function getImage()
     {
-        return $this->photo;
+        //return $this->photo;
+		// var_dump($this->photo);die; 
+		return ($this->photo) ? '/public/images/'.$this->photo : '/no-image.png';   //author.png, author.jpg
     }
 	
 }

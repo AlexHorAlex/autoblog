@@ -39,24 +39,48 @@ PublicAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="/public/images/logo.jpg" alt=""></a>
+                <a class="navbar-brand" href="#"><img src="/public/images/logo.png" alt=""></a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav text-uppercase">
-                    <li><a data-toggle="dropdown" class="dropdown-toggle" href="#">Home</a> <!-- href="index.html" -->
-                    </li>
+		       	<ul class="nav navbar-nav text-uppercase">
+					 <?php if(Yii::$app->user->isGuest):?>
+					<!--  <li><a data-toggle="dropdown" class="dropdown-toggle" href="#">Home</a></li>-->
+					  <?php elseif(Yii::$app->user->identity->isAdmin):?>
+                       <li><a>
+                            <?= Html::beginForm(['/admin'], 'post')
+                            . Html::submitButton(
+							//'Edit ',
+                            'Редагування ',  //статичне замінювання тексту
+							['class' => 'btn btn-link logout', 'style'=>"padding-top:10px;"])
+                            . Html::endForm() ?>
+					   </a></li>						 					 
+					  <?php else: ?>
+				<!-- 	   <li><a data-toggle="dropdown" class="dropdown-toggle" href="#">Home</a></li> -->
+                     <?php endif;?>	
+                </ul>			
+			     <!-- href="index.html" -->
+            <!--    <ul class="nav navbar-nav text-uppercase">
+                    <li><a data-toggle="dropdown" class="dropdown-toggle" href="#">Home</a></li>
                 </ul>
+			-->
                 <div class="i_con">
                     <ul class="nav navbar-nav text-uppercase">
 					 <?php if(Yii::$app->user->isGuest):?>
-                        <li><a href="<?= Url::toRoute(['auth/login'])?>">Login</a></li>
-                        <li><a href="<?= Url::toRoute(['auth/signup'])?>">Register</a></li>
+                       <li><a href="<?= Url::toRoute(['auth/login'])?>">
+					<!--   Login   -->
+					       Вхід <!-- //статичне замінювання тексту-->
+					   </a></li>
+                        <li><a href="<?= Url::toRoute(['auth/signup'])?>">						
+						<!--   Register  -->
+					       Реєстрація <!-- //статичне замінювання тексту-->
+						</a></li>						
 					 <?php else: ?>
 					 <li><a>
                             <?= Html::beginForm(['/auth/logout'], 'post')
                             . Html::submitButton(
-                                'Logout (' . Yii::$app->user->identity->name /*"Alex"*/. ')',
+                                /*'Logout */ //статичне замінювання тексту
+								'Вихід (' . Yii::$app->user->identity->name /*"Alex"*/. ')',
                                 ['class' => 'btn btn-link logout', 'style'=>"padding-top:10px;"]
                             )
                             . Html::endForm() ?>

@@ -43,7 +43,7 @@ Table of contents
 --------------------------------------*/
 body {
     font-family: 'Open Sans', sans-serif;
-    background: #F4F4F4;
+    background: #ffeb3b; /*#F4F4F4;*/
 }
 
 span, p, input {
@@ -78,16 +78,18 @@ ul {
 header
 ---------------------*/
 .main-menu.navbar-default {
-    background-color: #fff;
+    background-color: #795548;/*#fff;*/
     border-color: #e5e5e5;
     border-radius: 0;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #777;
+    color: #fff;/*#777;*/
     line-height: 36px;
 }
-
+.navbar-default .btn-link {
+    color: #fff;
+}
 .main-menu .navbar-brand > img {
     display: block;
     margin-right: 45px;
@@ -315,7 +317,7 @@ article {
 }
 
 .entry-header h1 a:hover {
-    color: #00acdf;
+    color: #009688 /*#00acdf;*/
 }
 
 .post-thumb img {
@@ -330,8 +332,8 @@ a.more-link {
     text-decoration: none;
     margin: 24px 0 28px;
     display: inline-block;
-    color: #00BFF3;
-    border: 1px solid #eee;
+    color: #3645f4; /*#00BFF3;*/
+    border: 1px solid  #00bcd4;/*#eee;*/
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
@@ -343,7 +345,7 @@ a.more-link:hover {
 }
 
 .post {
-    background: #fff;
+    background: #90f19e4f;/* #fff;*/
     margin-bottom: 50px;
 }
 
@@ -503,7 +505,7 @@ about me
 .widget {
     padding: 37px 30px;
     margin-bottom: 35px;
-    background-color: #fff;
+    background-color:#90f19e4f;/* #fff;*/
     border: 1px solid #eee;
 }
 

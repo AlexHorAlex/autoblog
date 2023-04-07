@@ -2,19 +2,20 @@
 
     <?php foreach($comments as $comment):?>
         <div class="bottom-comment"><!--bottom comment-->
-            <div class="comment-img">
-                <img width="50" class="img-circle" src="<?= '/no-image.png' // $comment->user->image; ?>" alt="">
+            <div class="comment-img">			
+                <img width="50" class="img-circle" src="<?= $comment->user->image; //'/no-image.png';?>" alt="">
             </div>
 
             <div class="comment-text">
-                <a href="#" class="replay btn pull-right"> Replay</a>
-                <h5><?= 'Alex' //$comment->user->name;?></h5>
+                <a href="#" class="replay btn pull-right">
+			<!--	Replay-->
+				Повтор
+				</a>
+                <h5><?= $comment->user->name; //'Alex';?></h5>
 
                 <p class="comment-date">
                     <?= $comment->getDate();//'16-02-2023'//?>
                 </p>
-
-
                 <p class="para"><?= $comment->text; ?></p>
             </div>
         </div>
@@ -25,7 +26,10 @@
 
 <?php if(!Yii::$app->user->isGuest):?>
     <div class="leave-comment"><!--leave comment-->
-        <h4>Leave a reply</h4>
+        <h4>
+		<!--Leave a reply-->
+		Залиште відповідь
+		</h4>
         <?php if(Yii::$app->session->getFlash('comment')):?>
             <div class="alert alert-success" role="alert">
                 <?= Yii::$app->session->getFlash('comment'); ?>
@@ -36,10 +40,13 @@
             'options'=>['class'=>'form-horizontal contact-form', 'role'=>'form']])?>
         <div class="form-group">
             <div class="col-md-12">
-                <?= $form->field($commentForm, 'comment')->textarea(['class'=>'form-control','placeholder'=>'Write Message'])->label(false)?>
+                <?= $form->field($commentForm, 'comment')->textarea(['class'=>'form-control','placeholder'=>'Написати повідомлення'/*'Write Message'*/])->label(false)?>
             </div>
         </div>
-        <button type="submit" class="btn send-btn">Post Comment</button>
+        <button type="submit" class="btn send-btn">
+	<!--	Post Comment-->
+		Опублікувати коментар
+		</button>
         <?php \yii\widgets\ActiveForm::end();?>
     </div><!--end leave comment-->
 <?php endif;?>

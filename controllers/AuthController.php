@@ -51,11 +51,13 @@ class AuthController extends Controller
         }
         return $this->render('signup', ['model'=>$model]);
     }
-
-    public function actionTest()/* при налогодженні, для перевірки статусу користувача */
+// процедури для налагодження програми 
+    public function actionTest()// процедура для перевірки статусу користувача, ввести  http://127.0.0.1/auth/test 
     {
         $user = User::findOne(1);
-        Yii::$app->user->logout();        
+		
+		//var_dump(Yii::$app->user->identity->isAdmin);die;
+       // Yii::$app->user->logout();        
         if(Yii::$app->user->isGuest)
         {
             echo 'Користувач гість';

@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php foreach($comments as $comment):?>
                     <tr>
                         <td><?= $comment->id?></td>
-                        <td><?= 'Alex'//$comment->user->name?></td>
+                        <td><?= $comment->user->name; //'Alex'?></td>
                         <td><?= $comment->text?></td>
                         <td>
                             <?php if($comment->isAllowed()):?>
